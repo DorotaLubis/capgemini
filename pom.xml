@@ -68,9 +68,9 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${basedir}/target/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-                    <suiteXmlFiles>
+                    <!--suiteXmlFiles>
                         <suiteXmlFile>src\test\resources\all_tests_suite.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles-->
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
