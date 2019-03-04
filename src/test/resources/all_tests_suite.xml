@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="All Capgemini Tests in Firefox" parallel="tests" thread-count="1">
+<suite name="All Capgemini Tests in Firefox" parallel="tests" thread-count="3">
 
     <listeners>
         <listener class-name="utils.testng.listeners.TestListener"/>
@@ -10,6 +10,18 @@
         <parameter name="browser" value="FIREFOX"/>
         <classes>
             <class name="tests.NavigatingToJobSearchPageTests"/>
+        </classes>
+    </test>
+    <test name="Search job offers in Wroclaw Tests">
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+            <class name="tests.SearchingJobOffersInWroclawTests"/>
+        </classes>
+    </test>
+    <test name="Check number of offers Tests">
+        <parameter name="browser" value="CHROME"/>
+        <classes>
+            <class name="tests.CheckingNumberOfOffersTests"/>
         </classes>
     </test>
 

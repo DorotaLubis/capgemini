@@ -8,7 +8,7 @@ import page.objects.JobSearchPage;
 import static navigation.ApplicationURLs.JOB_SEARCH_URL;
 import static org.testng.AssertJUnit.assertTrue;
 
-public class SearchingOfferUsingSearchFieldWithSelectingWroclawCityTests extends TestBase {
+public class SearchingJobOffersInWroclawTests extends TestBase {
 
     @Test
     @Description("The goal of this test is to select location Wroclaw from location drop down list, search job using search field and check results")

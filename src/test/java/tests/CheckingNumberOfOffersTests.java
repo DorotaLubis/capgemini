@@ -7,9 +7,8 @@ import page.objects.JobSearchPage;
 
 import static navigation.ApplicationURLs.TEST_JOB_IN_WROCLAW_SEARCH_URL;
 import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
 
-public class ChangingDisplayingAndCheckingNumberOfOfferTests extends TestBase {
+public class CheckingNumberOfOffersTests extends TestBase {
 
     @Test
     @Description("The goal of this test is to change displaying volume of offer in page and check number of offer")
