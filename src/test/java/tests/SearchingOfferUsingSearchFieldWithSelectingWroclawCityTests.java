@@ -6,18 +6,27 @@ import org.testng.annotations.Test;
 import page.objects.JobSearchPage;
 
 import static navigation.ApplicationURLs.JOB_SEARCH_URL;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class SearchingOfferUsingSearchFieldWithSelectingWroclawCityTests extends TestBase {
 
     @Test
-    @Description("The goal of this test is to select location Wroclaw, search job use word Test and check results")
-    public void searchOfferInputtingPhraseAndUsingLocationWroclaw() {
+    @Description("The goal of this test is to select location Wroclaw from location drop down list, search job using search field and check results")
+    public void searchOfferInputtingPhraseAndUsingLocationWroclaw() throws InterruptedException {
         DriverUtils.navigateToPage(JOB_SEARCH_URL);
+        String searchingPhrase = "Test";
+        String expectedPartOfLink = "Test&filter_location=wroclaw";
 
         JobSearchPage jobSearchPage = new JobSearchPage();
+        Boolean currentUrlContainsExpectedPartOfLink =
         jobSearchPage
-                .closingCookiesPanel()
-                .selectingWroclawCityFromLocationDropDownList()
-                .typePhraseIntoSearchFieldAndSubmit("Test");
+                .closeCookiesPanel()
+                .typePhraseIntoSearchFieldAndSubmit(searchingPhrase)
+                .selectWroclawCityFromLocationDropDownList()
+                .getUrlAndSplitIt(expectedPartOfLink);
+
+        Thread.sleep(3000);
+
+        assertTrue("Current URL not contains expected phrase",currentUrlContainsExpectedPartOfLink);
     }
 }

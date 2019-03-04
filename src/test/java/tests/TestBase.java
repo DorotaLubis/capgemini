@@ -10,7 +10,6 @@ import org.testng.annotations.*;
 
 import java.util.Properties;
 
-import static navigation.ApplicationURLs.APPLICATION_URL;
 
 public class TestBase {
 
@@ -29,7 +28,6 @@ public class TestBase {
         DriverManager.setWebDriver(browserType);
         DriverManager.getWebDriver();
         DriverUtils.setInitialConfiguration();
-        DriverUtils.navigateToPage(APPLICATION_URL);
     }
 
     @Step("Disposing browser")

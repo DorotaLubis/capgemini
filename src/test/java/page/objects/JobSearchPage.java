@@ -26,17 +26,17 @@ public class JobSearchPage extends BasePage {
         return pageTitle;
     }
 
-    @Step("Closing cookies")
-    public JobSearchPage closingCookiesPanel() {
-        WaitForElement.waitUntilElementIsClickable(cookiesCloseButton);
-        cookiesCloseButton.click();
-        return this;
+    @Step("Gettin part of URL")
+    public boolean getUrlAndSplitIt(String string){
+        String currentUrl = DriverManager.getWebDriver().getCurrentUrl();
+        Boolean currentUrlContainsString = currentUrl.contains(string);
+        return currentUrlContainsString;
     }
 
-    @Step("Selecting Wroclaw city from location drop down list")
-    public JobSearchPage selectingWroclawCityFromLocationDropDownList() {
-        Select select = new Select(locationFiled);
-        select.selectByValue("wroclaw");
+    @Step("Closing cookies")
+    public JobSearchPage closeCookiesPanel() {
+        WaitForElement.waitUntilElementIsClickable(cookiesCloseButton);
+        cookiesCloseButton.click();
         return this;
     }
 
@@ -47,4 +47,13 @@ public class JobSearchPage extends BasePage {
         jobSearch.submit();
         return this;
     }
+
+    @Step("Selecting Wroclaw city from location drop down list")
+    public JobSearchPage selectWroclawCityFromLocationDropDownList() {
+        Select select = new Select(locationFiled);
+        select.selectByValue("wroclaw");
+        return this;
+    }
+
+
 }
