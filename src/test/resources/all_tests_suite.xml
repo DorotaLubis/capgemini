@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="All Capgemini Tests in Firefox" parallel="tests" thread-count="1">
+
+    <listeners>
+        <listener class-name="utils.testng.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Negative to Job Search Page Tests">
+        <parameter name="browser" value="FIREFOX"/>
+        <classes>
+            <class name="tests.NavigatingToJobSearchPageTests"/>
+        </classes>
+    </test>
+
+</suite>
